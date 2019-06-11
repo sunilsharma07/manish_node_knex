@@ -1,0 +1,7 @@
+
+
+login :
+x-wwww-form-extended
+
+add_user :
+form -data
