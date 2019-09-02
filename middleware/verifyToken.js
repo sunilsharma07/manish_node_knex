@@ -1,6 +1,8 @@
-var jwt = require('jsonwebtoken'); 
- 
-var verifyToken=function (req, res,next) 
+//var jwt = require('jsonwebtoken'); 
+
+import jwt from "jsonwebtoken";
+
+const verifyToken=function (req, res,next) 
 {
 	var token = req.body.token || req.query.token || req.headers['token'];
 
@@ -20,7 +22,10 @@ var verifyToken=function (req, res,next)
 		});
 	}
 	 else {
-		res.status(401).send("Invalid Access.. Token Expaired");
+	    res.status(401).json({ success: '0', message: 'Invalid Access.. Token Expaired'});     
 	}
 };
-module.exports=verifyToken;
+
+//module.exports=verifyToken;
+
+export default verifyToken;

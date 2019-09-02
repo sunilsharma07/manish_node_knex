@@ -4,7 +4,7 @@
   "description": "",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www"
+    "start": "nodemon -r babel-register ./bin/www"
   },
   "author": "",
   "license": "ISC",
@@ -27,10 +27,14 @@
     "morgan": "^1.9.1",
     "multiparty": "^4.2.1",
     "mysql": "^2.16.0",
-    "nodemon": "^1.18.8",
     "path": "^0.12.7",
     "serve-favicon": "^2.5.0",
     "underscore": "^1.9.1",
     "url": "^0.11.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "nodemon": "^1.19.1"
   }
 }

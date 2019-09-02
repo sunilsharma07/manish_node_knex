@@ -1,22 +1,40 @@
-global.rootRequire = function(name) {
-    return require(__dirname + '/' + name);
-}
+// global.rootRequire = function(name) {
+//     return require(__dirname + '/' + name);
+// }
 
-var express = require('express');
-var path = require('path');
-var favicon = require('serve-favicon');
-var logger = require('morgan');
-var cookieParser = require('cookie-parser');
-var bodyParser = require('body-parser');
-var verifyToken = require('./middleware/verifyToken.js');
-var mysql = require('mysql');
-var expressValidator = require('express-validator');
-var http = require('http');
-var fs = require('fs');
-var util = require('util');
-var app = express();
-var mobile = require('./mobile/routes/route');
-//var mobile = require('./mobile/v1/routes/route');
+
+
+// var express = require('express');
+// var path = require('path');
+// var favicon = require('serve-favicon');
+// var logger = require('morgan');
+// var cookieParser = require('cookie-parser');
+// var bodyParser = require('body-parser');
+// var verifyToken = require('./middleware/verifyToken.js');
+// var mysql = require('mysql');
+// var expressValidator = require('express-validator');
+// var http = require('http');
+// var fs = require('fs');
+// var util = require('util');
+// var app = express();
+// var mobile = require('./mobile/routes/route');
+
+
+import express from "express";
+import path from "path";
+import servefavicon from "serve-favicon";
+import logger from "morgan";
+import cookieParser from "cookie-parser";
+import bodyParser from "body-parser";
+import verifyToken from "./middleware/verifyToken.js";
+import mysql from "mysql";
+import expressValidator from "express-validator";
+import http from "http";
+import fs from "fs";
+import util from "util";
+import mobile from "./mobile/routes/route";
+const app = express();
+
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -31,6 +49,8 @@ app.use(expressValidator({
 }));
 
 
+
+//app.listen(3003);
 
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
@@ -81,4 +101,6 @@ app.use(function(err, req, res, next) {
 });
 
 
-module.exports = app;
+//module.exports = app;
+
+export default app;
