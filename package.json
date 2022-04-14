@@ -9,7 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "async": "^2.6.1",
+    "async": "^3.2.2",
     "bluebird": "^3.5.3",
     "body-parse": "^0.1.0",
     "cookie-parser": "^1.4.3",
